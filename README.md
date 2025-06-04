@@ -1,8 +1,8 @@
-# 🎮 Juego: Adivina la Palabra (Consola)
+## Juego: Adivina la Palabra (Consola)
 
 Un sencillo juego de adivinanza de palabras en Java. El jugador debe adivinar una palabra letra por letra, con un número limitado de intentos. El juego muestra el progreso y notifica si se ha ganado o perdido.
 
-## 🧠 ¿Cómo funciona?
+## ¿Cómo funciona?
 
 - El juego selecciona aleatoriamente una palabra de una lista.
 - El jugador tiene **6 intentos** para adivinar la palabra.
@@ -10,7 +10,7 @@ Un sencillo juego de adivinanza de palabras en Java. El jugador debe adivinar un
 - Si se completa la palabra antes de quedarse sin intentos, el jugador gana.
 - Si se agotan los intentos sin adivinarla, el jugador pierde y se muestra la palabra correcta.
 
-## 🧩 Estructura del proyecto
+## Estructura del proyecto
 
 - `Palabra.java`: Se encarga de la lógica de selección de la palabra, comprobación de letras, progreso y verificación del estado del juego.
 - `JuegoAdivinanza.java`: Controla el juego, maneja los intentos y coordina las interacciones con la clase `Palabra`.
