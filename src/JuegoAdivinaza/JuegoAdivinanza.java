@@ -12,6 +12,7 @@ public class JuegoAdivinanza {
             palabra = new Palabra();
             intentosRestantes = 6;
             System.out.println("¡Juego iniciado!");
+            System.out.println("Pista: " + palabra.getPista());
         }
 
         public void adivinarLetra(char letra) {

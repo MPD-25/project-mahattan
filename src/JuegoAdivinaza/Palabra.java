@@ -2,14 +2,24 @@ package JuegoAdivinaza;
 
 public class Palabra {
     private String palabraSeleccionada;
+    private String pista;
     private char[] progreso;
 
     private static final String[] LISTA_PALABRAS = {
             "moto", "celular", "flor", "arbol"
     };
 
+    private static final String[] LISTA_PISTAS = {
+            "Vehículo de dos ruedas.",
+            "Dispositivo que usamos para comunicarnos.",
+            "Planta colorida que se regala mucho.",
+            "Ser vivo que tiene tronco, ramas y hojas."
+    };
+
     public Palabra() {
-        palabraSeleccionada = LISTA_PALABRAS[(int)(Math.random() * LISTA_PALABRAS.length)];
+        int indice = (int)(Math.random() * LISTA_PALABRAS.length);
+        palabraSeleccionada = LISTA_PALABRAS[indice];
+        pista = LISTA_PISTAS[indice];
         progreso = new char[palabraSeleccionada.length()];
         for (int i = 0; i < progreso.length; i++) {
             progreso[i] = '_';
@@ -39,8 +49,11 @@ public class Palabra {
         return palabraSeleccionada;
     }
 
+    public String getPista() {
+        return pista;
+    }
+
     public String getProgresoActual() {
         return new String(progreso);
     }
 }
-
