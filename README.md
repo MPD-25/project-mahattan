@@ -1,32 +1,108 @@
-## Juego: Adivina la Palabra (Consola)
+# Project Manhattan - Juego de Adivinanzas 🎯
 
-Un sencillo juego de adivinanza de palabras en Java. El jugador debe adivinar una palabra letra por letra, con un número limitado de intentos. El juego muestra el progreso y notifica si se ha ganado o perdido.
+Este es un juego de adivinanzas desarrollado en Java por el equipo Project Manhattan.
 
-## ¿Cómo funciona?
+## Equipo de Desarrollo
+- **SHAROON JAIMES**
+- **JOHÁN MORA**  
+- **JUAN VELASQUEZ**
 
-- El juego selecciona aleatoriamente una palabra de una lista.
-- El jugador tiene **6 intentos** para adivinar la palabra.
-- Por cada letra adivinada correctamente, se revela su posición en la palabra.
-- Si se completa la palabra antes de quedarse sin intentos, el jugador gana.
-- Si se agotan los intentos sin adivinarla, el jugador pierde y se muestra la palabra correcta.
+## Eslogan
+*¡Codificamos tu diversión!*
 
-## Estructura del proyecto
+## 🎮 Descripción
+Un juego interactivo donde el jugador debe adivinar palabras letra por letra, similar al clásico juego del ahorcado. Ahora con **categorías temáticas** y **pistas** para hacer el juego más divertido y educativo.
 
-- `Palabra.java`: Se encarga de la lógica de selección de la palabra, comprobación de letras, progreso y verificación del estado del juego.
-- `JuegoAdivinanza.java`: Controla el juego, maneja los intentos y coordina las interacciones con la clase `Palabra`.
-- `Main.java`: Proporciona la interfaz por consola con un menú principal, lectura del teclado, y ejecución del juego.
+## ✨ Nuevas Características
+- **5 Categorías temáticas**: Animales, Objetos, Ciudades, Naturaleza y Conceptos
+- **Sistema de pistas**: Cada palabra viene con una adivinanza descriptiva
+- **Archivo XLSX configurable**: Fácil de editar y expandir
+- **Interfaz mejorada** con emojis y mejor experiencia de usuario
+- **Sistema de intentos limitados** (6 oportunidades)
 
-## ▶️ Ejecución
+## 🎯 Cómo jugar
+1. Ejecuta el programa
+2. Selecciona "Iniciar juego" desde el menú principal
+3. **Elige una categoría** de tu preferencia
+4. Lee la **pista** que aparece en pantalla
+5. Introduce letras una por una para adivinar la palabra
+6. ¡Gana adivinando la palabra completa antes de quedarte sin intentos!
 
-1. Asegúrate de tener instalado **Java 8 o superior**.
-2. Compila los archivos:
+## 📁 Estructura del Proyecto
+- `Main.java` - Clase principal con los menús del juego
+- `JuegoAdivinanza.java` - Lógica principal del juego
+- `Palabra.java` - Manejo de las palabras, progreso y adivinanzas
+- `ItemAdivinanza.java` - Clase que representa una palabra con su pista
+- `GestorExcel.java` - Manejo de la carga de datos desde XLSX
+- `palabras_adivinanzas.xlsx` - Base de datos de palabras organizadas por categorías
 
-   ```bash
-   javac Palabra.java JuegoAdivinanza.java Main.java
+## 📋 Categorías Disponibles
 
-ejecuta el programa: java Main
-   
+### 🐾 Animales
+Fauna diversa desde mascotas hasta animales salvajes
+
+### 🔧 Objetos
+Elementos de uso cotidiano y tecnológico
+
+### 🏙️ Ciudades
+Capitales y ciudades famosas del mundo
+
+### 🌿 Naturaleza
+Elementos del mundo natural y geografía
+
+### 💭 Conceptos
+Ideas abstractas y valores fundamentales
+
+## 🛠️ Configuración Personalizada
+
+### Agregar nuevas palabras
+Edita el archivo `palabras_adivinanzas.xlsx` con el formato:
+```
+Categoría,Palabra,Adivinanza
+animales,tortuga,Reptil lento que lleva su casa a cuestas
+```
+
+### Crear nuevas categorías
+Simplemente agrega entradas con un nuevo nombre de categoría en el XLSX.
+
+## 💻 Requisitos Técnicos
+- Java 23 o superior
+- IDE compatible con Java (recomendado: IntelliJ IDEA)
+- Archivo `palabras_adivinanzas.xlsx` en el directorio raíz del proyecto
+
+## 🚀 Instalación y Ejecución
+1. Clona el repositorio
+2. Asegúrate de que `palabras_adivinanzas.xlsx` esté en el directorio raíz
+3. Compila y ejecuta `Main.java`
+4. ¡Disfruta del juego!
+
+## 🔮 Futuras Mejoras
+- Soporte para archivos Excel (.xlsx)
+- Sistema de puntuación
+- Múltiples niveles de dificultad
+- Interfaz gráfica
+
+## ▶️ Ejemplo de Ejecución
+
+```
 --- MENÚ ---
 1. Iniciar juego
 2. Acerca de
 3. Salir
+Seleccione una opción: 1
+
+--- SELECCIONAR CATEGORÍA ---
+1. ANIMALES
+2. OBJETOS
+3. CIUDADES
+4. NATURALEZA
+5. CONCEPTOS
+Selecciona una categoría (1-5): 1
+
+¡Juego iniciado!
+Categoría: ANIMALES
+🔍 Pista: El mejor amigo del hombre que ladra y mueve la cola
+Progreso: _ _ _ _ _
+Introduce una letra: p
+¡Correcto!
+Progreso: p _ _ _ _

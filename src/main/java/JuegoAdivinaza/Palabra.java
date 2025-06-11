@@ -2,14 +2,12 @@ package JuegoAdivinaza;
 
 public class Palabra {
     private String palabraSeleccionada;
+    private String adivinanza;
     private char[] progreso;
 
-    private static final String[] LISTA_PALABRAS = {
-            "moto", "celular", "flor", "arbol"
-    };
-
-    public Palabra() {
-        palabraSeleccionada = LISTA_PALABRAS[(int)(Math.random() * LISTA_PALABRAS.length)];
+    public Palabra(ItemAdivinanza item) {
+        this.palabraSeleccionada = item.getPalabra();
+        this.adivinanza = item.getAdivinanza();
         progreso = new char[palabraSeleccionada.length()];
         for (int i = 0; i < progreso.length; i++) {
             progreso[i] = '_';
@@ -41,6 +39,10 @@ public class Palabra {
 
     public String getProgresoActual() {
         return new String(progreso);
+    }
+
+    public String getAdivinanza() {
+        return adivinanza;
     }
 }
 
