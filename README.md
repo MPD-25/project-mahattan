@@ -67,8 +67,10 @@ Simplemente agrega entradas con un nuevo nombre de categoría en el XLSX.
 
 ## 💻 Requisitos Técnicos
 - Java 23 o superior
-- IDE compatible con Java (recomendado: IntelliJ IDEA)
+- IDE compatible con Java (recomendado: Visual Studio Code)
 - Archivo `palabras_adivinanzas.xlsx` en el directorio raíz del proyecto
+- comando ejecución: java -cp "target/classes;target/dependency/*" JuegoAdivinaza.Main
+java -cp "target/classes:target/dependency/*" JuegoAdivinaza.Main
 
 ## 🚀 Instalación y Ejecución
 1. Clona el repositorio
