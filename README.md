@@ -93,7 +93,7 @@ Simplemente agrega entradas con un nuevo nombre de categoría en el XLSX.
 1. Iniciar juego
 2. Acerca de
 3. Salir
-4. multijugador
+4. Modo multijugador (versus)
 Seleccione una opción: 1
 
 --- SELECCIONAR CATEGORÍA ---
@@ -105,9 +105,12 @@ Seleccione una opción: 1
 Selecciona una categoría (1-5): 1
 
 ¡Juego iniciado!
-Categoría: ANIMALES
-🔍 Pista: El mejor amigo del hombre que ladra y mueve la cola
-Progreso: _ _ _ _ _
-Introduce una letra: p
-¡Correcto!
-Progreso: p _ _ _ _
+Categoria: ANIMALES
+PISTA: Salta por el desierto australiano con una bolsa en su panza
+Tienes 40 segundos para adivinar la palabra.
+INSTRUCCIONES: Puedes escribir una letra o si sabes la palabra completa, escríbela toda.
+Progreso: _______
+Introduce una letra o la palabra completa: CANGURO
+¡Excelente! +50 puntos por adivinar la palabra completa.
+¡Felicidades! Has adivinado la palabra.
+Puntuación total: 70
