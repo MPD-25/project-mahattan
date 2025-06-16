@@ -11,7 +11,7 @@ Este es un juego de adivinanzas desarrollado en Java por el equipo Project Manha
 *¡Codificamos tu diversión!*
 
 ## 🎮 Descripción
-Un juego interactivo donde el jugador debe adivinar palabras letra por letra, similar al clásico juego del ahorcado. Ahora con **categorías temáticas** y **pistas** para hacer el juego más divertido y educativo.
+Un juego interactivo donde el jugador debe adivinar palabras letra por letra, similar al clásico juego del ahorcado. Ahora con **categorías temáticas**, **tiempo**, **puntos** y **pistas** para hacer el juego más divertido y educativo.
 
 ## ✨ Nuevas Características
 - **5 Categorías temáticas**: Animales, Objetos, Ciudades, Naturaleza y Conceptos
@@ -19,6 +19,9 @@ Un juego interactivo donde el jugador debe adivinar palabras letra por letra, si
 - **Archivo XLSX configurable**: Fácil de editar y expandir
 - **Interfaz mejorada** con emojis y mejor experiencia de usuario
 - **Sistema de intentos limitados** (6 oportunidades)
+- **sitema de puntos** hay bonificación al adivinar la palabra 
+- **temporizador** son 40 segundos para adivinar la palabra
+- **modo multijugador** compite entre dos personas para ver quin hace mas puntos 
 
 ## 🎯 Cómo jugar
 1. Ejecuta el programa
@@ -35,6 +38,7 @@ Un juego interactivo donde el jugador debe adivinar palabras letra por letra, si
 - `ItemAdivinanza.java` - Clase que representa una palabra con su pista
 - `GestorExcel.java` - Manejo de la carga de datos desde XLSX
 - `palabras_adivinanzas.xlsx` - Base de datos de palabras organizadas por categorías
+- `juegador.java` - Representa a un jugador - Contiene nombre del jugador y su puntaje acumulados
 
 ## 📋 Categorías Disponibles
 
@@ -79,9 +83,7 @@ Simplemente agrega entradas con un nuevo nombre de categoría en el XLSX.
 4. ¡Disfruta del juego!
 
 ## 🔮 Futuras Mejoras
-- Soporte para archivos Excel (.xlsx)
-- Sistema de puntuación
-- Múltiples niveles de dificultad
+- Soporte para archivos Excel (.xlsx) 
 - Interfaz gráfica
 
 ## ▶️ Ejemplo de Ejecución
@@ -91,6 +93,7 @@ Simplemente agrega entradas con un nuevo nombre de categoría en el XLSX.
 1. Iniciar juego
 2. Acerca de
 3. Salir
+4. multijugador
 Seleccione una opción: 1
 
 --- SELECCIONAR CATEGORÍA ---
