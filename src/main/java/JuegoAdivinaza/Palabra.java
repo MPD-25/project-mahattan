@@ -22,8 +22,10 @@ public class Palabra {
         boolean encontrada = false;
         for (int i = 0; i < palabraSeleccionada.length(); i++) {
             if (palabraSeleccionada.charAt(i) == letra) {
-                progreso[i] = letra;
-                encontrada = true;
+                if (progreso[i] != letra) {
+                    progreso[i] = letra;
+                    encontrada = true;
+                }
             }
         }
         return encontrada;
@@ -45,4 +47,3 @@ public class Palabra {
         return adivinanza;
     }
 }
-
