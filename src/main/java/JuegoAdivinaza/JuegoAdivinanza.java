@@ -23,9 +23,9 @@ public class JuegoAdivinanza {
 
      public JuegoAdivinanza(GestorExcel gestorExcel) {
         this.intentosRestantes = 6;
-        this.gestorExcel = gestorExcel; // Uses the provided GestorExcel instance
+        this.gestorExcel = gestorExcel; 
         this.puntaje = 0;
-        this.sinErrores = true; // Initialize this too
+        this.sinErrores = true; 
         this.tiempoAgotado = false;
      }
 
@@ -45,7 +45,7 @@ public class JuegoAdivinanza {
         System.out.println("¡Juego iniciado!");
         System.out.println("Categoria: " + categoria.toUpperCase());
         System.out.println("PISTA: " + palabra.getAdivinanza());
-        System.out.println("Tienes 115 segundos para adivinar la palabra.");
+        System.out.println("Tienes 40 segundos para adivinar la palabra.");
         System.out.println("INSTRUCCIONES: Puedes escribir una letra o si sabes la palabra completa, escríbela toda.");
          
     }
