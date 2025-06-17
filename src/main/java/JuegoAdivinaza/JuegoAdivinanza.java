@@ -12,12 +12,22 @@ public class JuegoAdivinanza {
     private boolean sinErrores;
     private static final int TIEMPO_LIMITE_SEGUNDOS = 40;
     private boolean tiempoAgotado;
+    
+    
 
     public JuegoAdivinanza() {
         intentosRestantes = 6;
         gestorExcel = new GestorExcel();
         puntaje = 0;
     }
+
+     public JuegoAdivinanza(GestorExcel gestorExcel) {
+        this.intentosRestantes = 6;
+        this.gestorExcel = gestorExcel; // Uses the provided GestorExcel instance
+        this.puntaje = 0;
+        this.sinErrores = true; // Initialize this too
+        this.tiempoAgotado = false;
+     }
 
     public void iniciarJuego(String categoria) {
         ItemAdivinanza item = gestorExcel.getItemAleatorio(categoria);
@@ -35,9 +45,14 @@ public class JuegoAdivinanza {
         System.out.println("¡Juego iniciado!");
         System.out.println("Categoria: " + categoria.toUpperCase());
         System.out.println("PISTA: " + palabra.getAdivinanza());
-        System.out.println("Tienes 40 segundos para adivinar la palabra.");
+        System.out.println("Tienes 115 segundos para adivinar la palabra.");
         System.out.println("INSTRUCCIONES: Puedes escribir una letra o si sabes la palabra completa, escríbela toda.");
+         
     }
+
+    
+
+    
 
     public void iniciarTemporizador() {
         Timer timer = new Timer();
@@ -109,4 +124,18 @@ public class JuegoAdivinanza {
     public GestorExcel getGestorExcel() {
         return gestorExcel;
     }
+
+    public void setGestorExcel(GestorExcel gestorExcel) {
+        this.gestorExcel = gestorExcel;
+    }
+
+    public boolean isTiempoAgotado() {
+        return tiempoAgotado;
+    }
+
+    public void setTiempoAgotado(boolean tiempoAgotado) {
+        this.tiempoAgotado = tiempoAgotado;
+    }
+
+ 
 }
