@@ -20,7 +20,7 @@ Un juego interactivo donde el jugador debe adivinar palabras letra por letra, si
 - **Interfaz mejorada** con emojis y mejor experiencia de usuario
 - **Sistema de intentos limitados** (6 oportunidades)
 - **sitema de puntos** hay bonificación al adivinar la palabra 
-- **temporizador** son 40 segundos para adivinar la palabra
+- **temporizador** son 60 segundos para adivinar la palabra
 - **modo multijugador** compite entre dos personas para ver quin hace mas puntos 
 
 ## 🎯 Cómo jugar
@@ -39,7 +39,7 @@ Un juego interactivo donde el jugador debe adivinar palabras letra por letra, si
 - `GestorExcel.java` - Manejo de la carga de datos desde XLSX
 - `palabras_adivinanzas.xlsx` - Base de datos de palabras organizadas por categorías
 - `juegador.java` - Representa a un jugador - Contiene nombre del jugador y su puntaje acumulados
-
+- `JuegoAdivinanzaGUI.java` - Interfaz del juego 
 ## 📋 Categorías Disponibles
 
 ### 🐾 Animales
@@ -83,8 +83,7 @@ Simplemente agrega entradas con un nuevo nombre de categoría en el XLSX.
 4. ¡Disfruta del juego!
 
 ## 🔮 Futuras Mejoras
-- Soporte para archivos Excel (.xlsx) 
-- Interfaz gráfica
+- mejorar más la interfaz
 
 ## ▶️ Ejemplo de Ejecución
 
@@ -107,7 +106,7 @@ Selecciona una categoría (1-5): 1
 ¡Juego iniciado!
 Categoria: ANIMALES
 PISTA: Salta por el desierto australiano con una bolsa en su panza
-Tienes 40 segundos para adivinar la palabra.
+Tienes 60 segundos para adivinar la palabra.
 INSTRUCCIONES: Puedes escribir una letra o si sabes la palabra completa, escríbela toda.
 Progreso: _______
 Introduce una letra o la palabra completa: CANGURO
