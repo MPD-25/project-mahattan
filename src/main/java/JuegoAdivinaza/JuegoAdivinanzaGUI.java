@@ -160,7 +160,7 @@ public class JuegoAdivinanzaGUI extends JFrame {
         gbcInfo.gridy = 0;
         infoBarPanel.add(lblPlayer2Score, gbcInfo);
 
-        lblTimer = createStyledLabel("Tiempo: 40s");
+        lblTimer = createStyledLabel("Tiempo: 60s");
         lblTimer.setFont(new Font("Arial", Font.BOLD, 14));
         gbcInfo.gridx = 3;
         gbcInfo.gridy = 0;
@@ -333,7 +333,7 @@ public class JuegoAdivinanzaGUI extends JFrame {
             jugadores = new ArrayList<>(); 
         }
 
-        // Hide/Show multiplayer specific labels
+        // Ocultar/Mostrar etiquetas específicas del modo multijugador
         lblPlayer1Score.setVisible(isMultiplayerMode);
         lblPlayer2Score.setVisible(isMultiplayerMode);
         lblCurrentPlayer.setVisible(isMultiplayerMode);
@@ -345,19 +345,19 @@ public class JuegoAdivinanzaGUI extends JFrame {
     }
 
     private void resetGameStateForNewRound() {
-        // Stop any running timer
+        // Detener cualquier temporizador en funcionamiento
         if (guiTimer != null) {
             guiTimer.stop();
         }
 
-        // Re-initialize juego for a clean slate each round/game
-        // Pass the existing gestorExcel instance
+        // Reinicializar juego para empezar de cero cada ronda/partida.
+        // Pasar la instancia gestorExcel existente.
         juego = new JuegoAdivinanza(gestorExcel);
 
         lblPista.setText("PISTA: ");
         lblProgresoPalabra.setText("Progreso: _______");
         lblIntentosRestantes.setText("Intentos restantes: 6");
-        lblTimer.setText("Tiempo: 40s");
+        lblTimer.setText("Tiempo: 60s");
         lblCurrentGamePoints.setText("Puntos de esta ronda: 0"); 
         txtEntrada.setText("");
         btnEnviar.setEnabled(true);
@@ -380,12 +380,12 @@ public class JuegoAdivinanzaGUI extends JFrame {
             return;
         }
 
-        // Reset current game state before starting a new one
+        // Restablecer el estado actual del juego antes de comenzar uno nuevo.
         resetGameStateForNewRound();
 
         juego.iniciarJuego(selectedCategory.toLowerCase());
 
-        // Check if a word was actually loaded
+        // Comprueba si una palabra se ha cargado realmente.
         if (juego.getPalabra().isEmpty()) {
             showMessage("No se pudo iniciar el juego en la categoría: " + selectedCategory + ". Intenta otra.");
             btnEnviar.setEnabled(false); 
@@ -393,7 +393,7 @@ public class JuegoAdivinanzaGUI extends JFrame {
             return;
         }
 
-        lblPista.setText("PISTA: " + gestorExcel.getItemAleatorio(selectedCategory.toLowerCase()).getAdivinanza()); 
+        lblPista.setText("PISTA: " + juego.getAdivinanza()); 
         updateGameDisplay(); 
         showMessage("Juego iniciado en la categoría: " + selectedCategory + ".");
         showMessage("INSTRUCCIONES: Puedes escribir una letra o la palabra completa.");
@@ -464,7 +464,8 @@ public class JuegoAdivinanzaGUI extends JFrame {
             endGameTurn(true); 
         } else if (juego.haPerdido()) {
             showMessage("¡HAS PERDIDO! La palabra era: " + juego.getPalabra().toUpperCase());
-            // Reveal the word automatically if lost
+
+            // Mostrar la palabra automáticamente si se pierde
             lblProgresoPalabra.setText(juego.getPalabra().toUpperCase().replace("", " ").trim());
             showMessage("Puntuación final de esta ronda: " + juego.getPuntaje()); 
             endGameTurn(false); 
@@ -508,7 +509,7 @@ public class JuegoAdivinanzaGUI extends JFrame {
     }
 
     private void startGUITimer() {
-        timeLeft = 40; 
+        timeLeft = 60; 
         lblTimer.setText("Tiempo: " + timeLeft + "s");
 
         if (guiTimer != null) {
@@ -586,7 +587,7 @@ public class JuegoAdivinanzaGUI extends JFrame {
 
         JOptionPane.showMessageDialog(this, results, "Resultados Finales Multijugador", JOptionPane.INFORMATION_MESSAGE);
 
-        // Reset multiplayer state to allow starting a new game
+        // Restablecer el estado multijugador para permitir iniciar una nueva partida.
         isMultiplayerMode = false;
         jugadores = null;
         currentPlayerIndex = 0;
@@ -603,12 +604,12 @@ public class JuegoAdivinanzaGUI extends JFrame {
             if (guiTimer != null) {
                 guiTimer.stop(); 
             }
-            // Reset all game-related state variables for a clean return to menu
+            // Restablecer todas las variables de estado relacionadas con el juego para volver al menú sin problemas.
             isMultiplayerMode = false;
             jugadores = null;
             currentPlayerIndex = 0;
             currentRound = 1;
-            // Create a new JuegoAdivinanza instance to fully reset the game logic
+            // Crea una nueva instancia de JuegoAdivinanza para restablecer completamente la lógica del juego.
             juego = new JuegoAdivinanza(gestorExcel);
             cardLayout.show(mainPanel, "Menu");
             showMessage("Has vuelto al menú principal.");

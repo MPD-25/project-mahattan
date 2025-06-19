@@ -10,7 +10,7 @@ public class JuegoAdivinanza {
     private GestorExcel gestorExcel;
     private int puntaje;
     private boolean sinErrores;
-    private static final int TIEMPO_LIMITE_SEGUNDOS = 40;
+    private static final int TIEMPO_LIMITE_SEGUNDOS = 60;
     private boolean tiempoAgotado;
     
     
@@ -45,11 +45,18 @@ public class JuegoAdivinanza {
         System.out.println("¡Juego iniciado!");
         System.out.println("Categoria: " + categoria.toUpperCase());
         System.out.println("PISTA: " + palabra.getAdivinanza());
-        System.out.println("Tienes 40 segundos para adivinar la palabra.");
+        System.out.println("Tienes 60 segundos para adivinar la palabra.");
         System.out.println("INSTRUCCIONES: Puedes escribir una letra o si sabes la palabra completa, escríbela toda.");
          
     }
 
+    public String getAdivinanza() {
+        // Aseguramos que 'palabra' no sea null antes de intentar llamar a su método
+        if (palabra != null) {
+            return palabra.getAdivinanza();
+        }
+        return "pista no disponible";
+    }
     
 
     

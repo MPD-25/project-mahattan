@@ -13,7 +13,7 @@ public class Main {
             System.out.println("1. Iniciar juego");
             System.out.println("2. Acerca de");
             System.out.println("3. Salir");
-            System.out.println("4. Modo multijugador (versus)");
+            System.out.println("4. Modo multijugador");
             System.out.print("Seleccione una opcion: ");
             opcion = scanner.nextInt();
             scanner.nextLine();
